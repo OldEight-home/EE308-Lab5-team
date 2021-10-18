@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 bool G56(){
 	srand((int)time(0));
 	double num1z=(rand()%10000)+1;
@@ -8,7 +9,7 @@ bool G56(){
 	double num2x=(double)(rand()%100)/100;
 	double num1=num1z+num1x;
 	double num2=num2z+num2x;
-	int symbol=rand()%4;// 0´ú±í+£¬1´ú±í-£¬2´ú±í*£¬3´ú±í/ 
+	int symbol=rand()%4;// 0ä»£è¡¨+ï¼Œ1ä»£è¡¨-ï¼Œ2ä»£è¡¨*ï¼Œ3ä»£è¡¨/ 
 	double result;
 	if(symbol==0){
 		result=num1+num2;
@@ -18,10 +19,10 @@ bool G56(){
 		cout<<num1<<"-"<<num2<<"=?"<<endl;
 	}else if(symbol==2){
 		result=num1*num2;
-		cout<<num1<<"¡Á"<<num2<<"=?"<<endl;
+		cout<<num1<<"Ã—"<<num2<<"=?"<<endl;
 	}else{
 		result=num1/num2; 
-		cout<<num1<<"¡Â"<<num2<<"=?"<<endl;
+		cout<<num1<<"Ã·"<<num2<<"=?"<<endl;
 	}
 	double input;
 	cin>>input;
@@ -31,3 +32,4 @@ bool G56(){
 		return false;
 	}
 }
+
