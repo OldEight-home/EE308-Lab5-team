@@ -1,34 +1,33 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-int G56(int,int ); 
-#include <ctime>
-#include <cstdlib>
-int main(){
-   int a;
-   int b;
-   G56(a,b);
+bool G56(){
+	srand((int)time(0));
+	double num1z=(rand()%10000)+1;
+	double num2z=(rand()%10000)+1;
+	double num1x=(double)(rand()%100)/100;
+	double num2x=(double)(rand()%100)/100;
+	double num1=num1z+num1x;
+	double num2=num2z+num2x;
+	int symbol=rand()%4;// 0代表+，1代表-，2代表*，3代表/ 
+	double result;
+	if(symbol==0){
+		result=num1+num2;
+		cout<<num1<<"+"<<num2<<"=?"<<endl;
+	}else if(symbol==1){
+		result=num1-num2;
+		cout<<num1<<"-"<<num2<<"=?"<<endl;
+	}else if(symbol==2){
+		result=num1*num2;
+		cout<<num1<<"×"<<num2<<"=?"<<endl;
+	}else{
+		result=num1/num2; 
+		cout<<num1<<"÷"<<num2<<"=?"<<endl;
+	}
+	double input;
+	cin>>input;
+	if(input==result){
+		return true;
+	}else{
+		return false;
+	}
 }
-int G56(int a,int b)
-{
-    srand(time(NULL)); 
-        a=(rand()%10000)+1;  //随机生成两个相加减乘除的两个数a，b
-        b=(rand()%10000)+1;
-        int c=(rand()%4)+1;   //随机生成运算符号 
-         switch(c)
-         {
-         	int sum,sum1,t;
-             case 1:cout<<a<<'+'<<b<<'=';cin>>sum;
-                    if(a+b != sum){cout<<"false"; return false;}else{cout<<"true"; return true;}
-                    break;
-             case 2:if(a<b){t=a;a=b;b=t;}cout<<a<<'-'<<b<<'=';cin>>sum;
-                    if(a-b != sum){cout<<"false"; return false;}else{cout<<"true"; return true;}
-                    break;
-             case 3:cout<<a<<'*'<<b<<'=';cin>>sum;
-                    if(a*b != sum){cout<<"false"; return false;}else{cout<<"true"; return true;}
-                    break;
-             case 4:if(a<b){t=a;a=b;b=t;}cout<<a<<'/'<<b<<'=';cin>>sum;cout<<"余数=";cin>>sum1;
-                    if(a/b == sum && a%b == sum1){cout<<"true"; return true;}else{cout<<"false"; return false;}
-                    break;
-         }
-}
-
