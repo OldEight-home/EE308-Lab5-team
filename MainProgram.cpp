@@ -35,7 +35,9 @@ void runProgram(const UserInput& input) {
 			if (G34()) {
 				totalScore += everyScore;
 			}
+
 		}
+		break;
 	case 5:
 	case 6:
 		for (int i = 0; i < input.questionNum; i++) {
@@ -44,16 +46,18 @@ void runProgram(const UserInput& input) {
 			if (G56()) {
 				totalScore += everyScore;
 			}
-		}
 
-		//全答对
-		if (totalScore == score) {
-			cout << "end! All right, that's great! Your score is 100" << endl;
 		}
-		else {
-			cout << "end! Wrong question, your score is " << totalScore << endl;
-		}
+		break;
+	}
+	//全答对
+	if (totalScore == score) {
+		cout << "end! All right, that's great! Your score is 100" << endl;
+	}
+	else {
+		cout << "end! Wrong question, your score is " << totalScore << endl;
 	}
 }
+
 
 
